@@ -1,5 +1,22 @@
 # gRPC Grocery Store
 
+## Create the Service Definition Protobuf
+
+Create the `proto` directory and the service definition, in this case `proto/store.proto`.
+
+```shell
+mkdir proto/
+touch proto/store.proto
+```
+
+## Create the build.rs code
+
+Create the `build.rs` file in the root of the project and run the following command to generate the `store.rs` file in the `src/` directory.
+
+```shell
+cargo build
+```
+
 ## Testing gRPC Server
 
 ```shell
