@@ -3,6 +3,27 @@ name = "grpc-grocery-store"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[[bin]]
+name = "cli"
+path = "src/cli.rs"
 
 [dependencies]
+tonic = "0.11.0"
+tonic-reflection = "0.11.0"
+prost = "0.12.3"
+tokio = { version = "1.36.0", features = ["macros", "rt-multi-thread"] }
+tokio-stream = { version = "0.1.14", features = ["net"] }
+futures = "0.3.30"
+clap = { version = "4.5.1", features = ["derive"] }
+
+[build-dependencies]
+tonic-build = "0.11.0"
+
+[dev-dependencies]
+uuid = { version = "1.7.0", features = ["v4", "fast-rng"] }
+futures-util = "0.3.30"
+anyhow = "1.0.80"
